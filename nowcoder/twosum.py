@@ -4,8 +4,9 @@ class Solution:
         a=[]
         for i in range(len(numbers)):
             if target-numbers[i] in numbers[0:i]+numbers[i+1:]:
-                a.append(numbers.index(numbers[i])+1)
-                a.append(numbers.index(target-numbers[i])+1)
+                if numbers.index(numbers[i])+1!=numbers.index(target-numbers[i])+1:
+                    a.append(numbers.index(numbers[i])+1)
+                    a.append(numbers.index(target-numbers[i])+1)
                 return a
             # print(i)
             # b=numbers
